@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Për stilizim të përgjithshëm */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #d2bcb2, #e2ceb4);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Dekorative circles in background */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: move 20s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 200px; /* Përshtatës për më shumë vizibilitet */
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 25s;
+        }
+
+        .circle:nth-child(2) {
+            width: 250px; /* Përshtatës për më shumë vizibilitet */
+            height: 250px;
+            top: 50%;
+            left: 80%;
+            animation-duration: 18s;
+        }
+
+        .circle:nth-child(3) {
+            width: 350px; /* Përshtatës për më shumë vizibilitet */
+            height: 350px;
+            top: 80%;
+            left: 20%;
+            animation-duration: 22s;
+        }
+
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Container dhe animacionet */
+        .container {
+            background-color: rgba(243, 242, 238, 0.7);
+            padding: 60px; /* Zgjeruar për më shumë hapësirë */
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px; /* Zgjeruar për më shumë hapësirë */
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        h1 {
+            margin-bottom: 30px; /* Zgjeruar për më shumë hapësirë */
+            font-size: 32px;
+            color: #333;
+            text-transform: uppercase;
+            animation: slideDown 1s forwards;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #333;
+        }
+
+        .button {
+            width: 100%;
+            padding: 15px;
+            background-color: #3a30304d;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .button:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        a.button {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        a.button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="register.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="radio-group">
+                <label for="manager">Select Manager:</label>
+                <input type="radio" id="manager1" name="manager" value="1" required>
+                <label for="manager1">Sektori 1</label><br>
+                <input type="radio" id="manager2" name="manager" value="2" required>
+                <label for="manager2">Sektori 2</label><br>
+                <input type="radio" id="manager3" name="manager" value="3" required>
+                <label for="manager3">Sektori 3</label>
+            </div>
+            
+            <input type="submit" value="Continue" class="button">
+        </form>
+    </div>
+</body>
+</html>

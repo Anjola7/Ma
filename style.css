@@ -1,0 +1,112 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.container .button-container {
+    margin-bottom: 20px;
+}
+
+.container .button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #7a6262;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 150px; /* Madhësia e përbashkët për të gjitha butonat */
+}
+
+.container .button:hover {
+    background-color: #6d4c4c; /* Ngjyra më e errët kur kalon mbi butonin */
+    transform: translateY(-5px);
+}
+
+.container .button:active {
+    background-color: #5c3d3d; /* Ngjyra më e errët kur butoni është klikuar */
+    transform: translateY(-2px);
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Form */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+form input[type="submit"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e2e2e2;
+}
+
+/* Links */
+a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #e2e2e2;
+}

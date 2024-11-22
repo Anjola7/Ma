@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+    <style>
+        /* Për stilizim të përgjithshëm */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #d2bcb2,#e2ceb4);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Shtohet për të parandaluar scrollbar */
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(243, 242, 238, 0.6);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #f2f2f2;
+            background: #3a30304d;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .button:hover {
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+            animation: none; /* Hiq animacionin e pulsit gjatë hover */
+        }
+
+        .button:active {
+            transform: translateY(-2px);
+        }
+
+        /* Efektet e animacionit */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Shto disa dekorime në sfond */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            animation: move 8s infinite ease-in-out;
+        }
+
+        .circle.small {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 10%;
+            animation-duration: 6s;
+        }
+
+        .circle.medium {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            right: 15%;
+        }
+
+        .circle.large {
+            width: 200px;
+            height: 200px;
+            bottom: 5%;
+            right: 5%;
+            animation-duration: 10s;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <a class="button" href="register.html">Register</a>
+        <a class="button" href="login.html">Login</a>
+    </div>
+
+    <!-- Dekorime në sfond -->
+    <div class="circle small"></div>
+    <div class="circle medium"></div>
+    <div class="circle large"></div>
+</body>
+</html>
